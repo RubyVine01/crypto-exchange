@@ -1,10 +1,11 @@
 <template>
   <h1>Crypto</h1>
-  <Input />
+  <Input :changeAmount="changeAmount" />
   <div className="selectors">
-    <Selector />
-    <Selector />
+    <Selector :setCrypto="setConvertFrom" />
+    <Selector :setCrypto="setConvertTo" />
   </div>
+
 
 </template>
 
@@ -12,7 +13,26 @@
 import Input from './components/Input.vue';
 import Selector from './components/Selector.vue'
 export default {
-  components: { Input, Selector }
+  components: { Input, Selector },
+  data() {
+    return {
+      amount: 0,
+      convertFrom: '',
+      convertTo: ''
+    }
+  },
+  methods: {
+    changeAmount(val) {
+      this.amount = val
+    },
+    setConvertFrom(val) {
+      this.convertFrom = val
+    },
+    setConvertTo(val) {
+      this.convertTo = val
+    }
+
+  }
 }
 </script>
 
