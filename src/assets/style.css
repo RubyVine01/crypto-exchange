@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nabla&family=Nunito:wght@400;500;600;700;800;900&family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nabla&family=Nunito:wght@400;500;600;700;800;900&family=Quicksand&display=swap");
 
 body {
   background: rgb(86, 18, 91);
@@ -8,11 +9,13 @@ body {
     rgba(40, 10, 80, 1) 100%
   );
   min-height: 100vh;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
 }
 
 h1 {
   font-family: "Nabla", cursive;
-  text-align: center;
   margin-top: 100px;
+  margin-bottom: 60px;
   font-size: 10em;
 }
