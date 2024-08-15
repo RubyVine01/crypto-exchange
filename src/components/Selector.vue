@@ -6,7 +6,7 @@
         <li @click="selectItem('ETH')" :className="current == 'ETH' ? 'active' : ''">
             ETH
         </li>
-        <li @click="selectItem('USDT')" :className="current == 'USDT' ? 'active' : ''">
+        <li @click="selectItem('USD')" :className="current == 'USD' ? 'active' : ''">
             USDT
         </li>
     </ul>
