@@ -1,12 +1,12 @@
 <template>
     <ul>
-        <li @click="selectItem('BTC')" :className="current == 'BTC' ? 'active' : ''">
+        <li @click="setCrypto('BTC')" :className="convertNow == 'BTC' ? 'active' : ''">
             Bitcoin
         </li>
-        <li @click="selectItem('ETH')" :className="current == 'ETH' ? 'active' : ''">
+        <li @click="setCrypto('ETH')" :className="convertNow == 'ETH' ? 'active' : ''">
             ETH
         </li>
-        <li @click="selectItem('USD')" :className="current == 'USD' ? 'active' : ''">
+        <li @click="setCrypto('USD')" :className="convertNow == 'USD' ? 'active' : ''">
             USDT
         </li>
     </ul>
@@ -19,17 +19,10 @@ export default {
             type: Function,
             required: true,
         },
-    },
-    data() {
-        return {
-            current: "",
-        };
-    },
-    methods: {
-        selectItem(val) {
-            this.setCrypto(val);
-            this.current = val;
-        },
+        convertNow: {
+            type: String,
+            required: true,
+        }
     },
 };
 </script>

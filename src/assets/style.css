@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nabla&family=Nunito:wght@400;500;600;700;800;900&family=Quicksand&display=swap");
 
 body {
+  justify-content: start;
   background: rgb(86, 18, 91);
   background: linear-gradient(
     339deg,
