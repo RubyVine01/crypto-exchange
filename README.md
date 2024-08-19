@@ -1,29 +1,35 @@
-# crypto-exchange
+# Crypto Exchange
 
-This template should help get you started developing with Vue 3 in Vite.
+[Crypto Exchange](https://rubyvine01.github.io/crypto-exchange/) - это приложение для конвертации криптовалюты.
 
-## Recommended IDE Setup
+## Функциональность
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- Конвертация криптовалюты: Поддерживает конвертацию различных криптовалют, используя библиотеку Crypto-Convert.
+- Избранные пары: Позволяет пользователю сохранить до 3 избранных пар для быстрого доступа.
+- Валидация ввода: Проверяет корректность введённых данных и отображает ошибки пользователю.
 
-## Customize configuration
+## Используемые технологии
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- Vue.js — прогрессивный JavaScript-фреймворк для создания пользовательских интерфейсов.
+- Vite — инструмент для быстрой сборки и разработки современных веб-приложений.
+- [Crypto-Convert](https://github.com/coinconvert/crypto-convert) — библиотека для точной конвертации криптовалюты.
 
-## Project Setup
+## Установка
 
+1. Клонируйте репозиторий:
+```sh
+git clone  https://github.com/RubyVine01/crypto-exchange.git
+
+cd crypto-exchange
+```
+
+2. Установите зависимости:
+Убедитесь, что у вас установлены Node.js и npm.
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
-
+3. Запустите проект:
 ```sh
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
 ```
