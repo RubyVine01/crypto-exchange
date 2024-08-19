@@ -102,7 +102,7 @@ export default {
   display: flex;
   justify-content: space-between;
   width: 570px;
-  margin: 20px  0;
+  margin: 20px 0;
 }
 
 .text-error {
