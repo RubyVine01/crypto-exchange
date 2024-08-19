@@ -2,13 +2,13 @@
   <div className="app">
     <h1>Crypto</h1>
     <Input :changeAmount="changeAmount" :convert="convert" :favourite="favourite" />
-    <p v-if="error != ''">{{ error }}</p>
+    <p v-if="error != ''" className="text-error">{{ error }}</p>
     <p v-if="result != ''" className="result-text">{{ result }}</p>
-    <Favourite :favs="favs" v-if="favs.length > 0" :getFromFavs="getFromFavs"/>
     <div className="selectors">
-      <Selector :setCrypto="setConvertFrom" :convertNow="convertFrom"/>
-      <Selector :setCrypto="setConvertTo" :convertNow="convertTo "/>
+      <Selector :setCrypto="setConvertFrom" :convertNow="convertFrom" />
+      <Selector :setCrypto="setConvertTo" :convertNow="convertTo" />
     </div>
+    <Favourite :favs="favs" v-if="favs.length > 0" :getFromFavs="getFromFavs" />
   </div>
 </template>
 
@@ -35,19 +35,34 @@ export default {
   },
   methods: {
     favourite() {
+
+      if (this.favs.length >= 3) {
+        this.error = 'Максимальное количество в избранном 3';
+        return
+      }
+      else if (this.convertFrom == '' || this.convertTo == '') {
+        this.error = 'Выберите валюту.';
+        return
+      }
+      else if (this.convertFrom == this.convertTo) {
+        this.error = 'Выберите другую валюту.';
+        return
+      }
+
+      this.error = ""
       this.favs.push({
         from: this.convertFrom,
         to: this.convertTo
       })
     },
-    getFromFavs(index) { 
-       this.convertFrom = this.favs[index].from;
-       this.convertTo = this.favs[index].to
+    getFromFavs(index) {
+      this.convertFrom = this.favs[index].from;
+      this.convertTo = this.favs[index].to
     },
     changeAmount(val) {
       this.amount = val
     },
-    setConvertFrom(val) { 
+    setConvertFrom(val) {
       this.convertFrom = val
     },
     setConvertTo(val) {
@@ -76,7 +91,6 @@ export default {
 }
 </script>
 
-
 <style scoped>
 .app {
   display: flex;
@@ -86,8 +100,13 @@ export default {
 
 .selectors {
   display: flex;
-  justify-content: space-around;
-  width: 700px;
-  margin: 20px auto;
+  justify-content: space-between;
+  width: 570px;
+  margin: 20px  0;
+}
+
+.text-error {
+  color: rgb(211, 1, 176);
+  margin: 10px;
 }
 </style>
